@@ -1,0 +1,111 @@
+html {
+    background-color: #ffe100;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: var(--puzzle-background);
+    height: 100%;
+    margin: 0;
+}
+
+#header {
+    background: linear-gradient(#edc307, #ffe100);
+    height: 120px;
+    border-bottom: 6px solid #6100ff; 
+    box-shadow: black 0px 1px 8px;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: auto;
+    color: #6100ff;
+    font-size: 60px;
+    text-shadow: -2px 1px black, 1px 2px black, 2px 1px black, 1px -2px black;
+}
+
+button {
+    cursor: pointer;
+}
+
+#startBtn {
+    text-align: center;
+    margin-top: 80px;
+}
+
+#startBtn button{
+    font-size: 30px;
+    padding: 10px 40px;
+    border-radius: 15px;
+    border: black 2px solid;
+    background-color: #ffe733;
+}
+
+#startBtn button:hover{
+    background-color: #ffed66; 
+}
+
+#hintDiv {
+    margin: 35px;
+    text-align: center;
+}
+
+#hintDiv summary{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#puzzle {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#puzzle img{
+    width: 25%;
+    border-radius: 8px;
+}
+
+#answerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#puzzle button{
+    font-size: 25px;
+    padding: 5px 20px;
+    border-radius: 12px;
+    border: black 2px solid;
+    background-color: #ffe733;
+    margin-left: 10px;
+}
+
+#puzzle button:hover{
+    background-color: #ffed66;
+}
+
+#answer {
+    font-size: 25px;
+    padding: 5px 20px;
+    border-radius: 12px;
+    border: black 2px solid;
+}
+
+#congratulationsDiv {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 30px;
+}
+
+#easterEgg img{
+    position: absolute;
+    width: 3.5%;
+    cursor: pointer;
+    opacity: 50%;
+    transform: rotate(calc(var(--rotation) * 1deg));
+}

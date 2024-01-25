@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Escape Puzzle - Congratulations</title>
+</head>
+<body style="background-color: #fffefa;">
+    <div id="header">
+        <h1>Escape Puzzle</h1>
+    </div>
+    <div id="congratulationsDiv">
+        <p>
+            <b>Congratulations! </b>
+            <br/>
+            You managed to solve all the puzzles.
+        </p>
+       
+        <div id="hintDiv" style="margin-top: 60px">
+            <details>
+                <summary>Hint</summary>
+                <p style="font-size: 22px;">
+                    Did you know that there are websites that have Easter Eggs? 
+                    <br/>
+                    Maybe you'll find a surprise!
+                </p>
+            </details>
+        </div>
+
+        <div id="startBtn">
+            <button onclick="window.location.href='escape-puzzle.html'">
+                Main Page
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAllEasterEggs();
+        });
+
+        function checkAllEasterEggs() {
+            // Initialize a counter
+            var count = 0;
+
+            // Check each EasterEgg local storage variable
+            for (var i = 1; i <= 10; i++) {
+                var key = "EasterEgg" + i;
+                var value = localStorage.getItem(key);
+
+                // Check if the variable exists and has the value "true"
+                if (value === "true") {
+                    count++;
+                }
+            }
+
+            // If all 10 EasterEgg variables have the value "true", show the message
+            if (count === 10) {
+                showEasterEggMessage();
+            }
+        }
+
+        function showEasterEggMessage() {
+            var hintDiv = document.getElementById('hintDiv');
+            hintDiv.innerHTML = "<p style='font-size: 24px;'>You also found all the Easter eggs.<br/><b>Congratulations!</b></p>";
+        }
+    </script>
+</body>
+</html>

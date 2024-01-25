@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="backgroundColor.js" defer></script>
+    <title>Escape Puzzle 3</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Escape Puzzle</h1>
+    </div>
+    <div id="puzzle">
+        <img src="/images/puzzle3.png" alt="">
+        <div id="answerDiv">
+            <input type="text" name="answer" id="answer" placeholder="Answer" autofocus>
+            <button onclick="checkAnswer()">Go</button>
+        </div>
+        <p id="resultMessage"></p>
+    </div>
+    <div id="hintDiv">
+        <details>
+            <summary>Hint</summary>
+            <p>Only one known person has this university degree.</p>
+        </details>
+    </div>
+    <div id="easterEgg">
+        <img src="/images/puzzle.png" alt="">
+    </div>
+    
+    <script>
+        function checkAnswer() {
+            var userInput = document.getElementById('answer').value.toLowerCase();
+            var resultMessageElement = document.getElementById('resultMessage');
+    
+            if (userInput === "enigmatology") {
+                window.location.href = "enigmatology.html";
+            } else {
+                resultMessageElement.textContent = "Incorrect answer. Try again!";
+            }
+        }
+        
+        var easterEggImage = document.getElementById('easterEgg');
+
+            // Add click event listener to the image
+            easterEggImage.addEventListener('click', function() {
+                    incrementCounter();
+                });
+
+        // Generate a random rotation angle between 0 and 360 degrees
+        var randomRotation = Math.floor(Math.random() * 360);
+
+        // Set the rotation angle as a CSS variable
+        easterEggImage.style.setProperty('--rotation', randomRotation);
+        
+        function incrementCounter() {
+            // Retrieve the current counter value from local storage
+            var currentCounter = localStorage.getItem('EasterEgg3') || 0;
+
+            // Update the counter value in local storage
+            localStorage.setItem('EasterEgg3', true);
+        }
+        
+        // Add event listener for Enter key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setBackgroundColor();
+            setRandomPosition(480, 700, "invert(90%) sepia(11%) saturate(1653%) hue-rotate(59deg) brightness(104%) contrast(101%)");
+        });
+    </script>
+</body>
+</html>
