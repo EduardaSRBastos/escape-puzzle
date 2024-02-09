@@ -26,6 +26,7 @@ h1 {
     color: #6100ff;
     font-size: 60px;
     text-shadow: -2px 1px black, 1px 2px black, 2px 1px black, 1px -2px black;
+    cursor: pointer;
 }
 
 button {
@@ -82,12 +83,15 @@ button {
     padding: 5px 20px;
     border-radius: 12px;
     border: black 2px solid;
-    background-color: #ffe733;
     margin-left: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(180deg, #ffea71, #ffcd00);
 }
 
 #puzzle button:hover{
     background-color: #ffed66;
+    transform: scale(101%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 #answer {
@@ -95,6 +99,11 @@ button {
     padding: 5px 20px;
     border-radius: 12px;
     border: black 2px solid;
+    outline: none;
+}
+
+#answer:focus {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 #congratulationsDiv {
